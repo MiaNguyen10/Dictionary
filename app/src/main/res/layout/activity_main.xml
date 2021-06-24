@@ -100,12 +100,6 @@
             android:text="Button"
             android:backgroundTint="#063838"/>
 
-        <Button
-            android:id="@+id/button_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:backgroundTint="#063838"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
