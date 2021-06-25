@@ -41,18 +41,20 @@
         android:textSize="40sp"
         android:freezesText="true"
         android:layout_alignParentRight="true" />
+
     <TextView
         android:id="@+id/text_view_question"
-        android:layout_width="match_parent"
+        android:layout_width="530dp"
         android:layout_height="wrap_content"
         android:layout_above="@id/radio_group"
+        android:layout_marginLeft="0.4in"
         android:layout_marginBottom="16dp"
+        android:freezesText="true"
+        android:gravity="center_horizontal"
         android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:freezesText="true"
-        android:gravity="center_horizontal" />
+        android:textSize="16sp" />
     <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="wrap_content"

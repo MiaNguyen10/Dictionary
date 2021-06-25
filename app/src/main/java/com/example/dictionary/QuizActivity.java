@@ -35,6 +35,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private TextView textViewCountDown;
+    private TextView textViewLevel;
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -64,6 +65,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
         textViewCountDown = findViewById(R.id.text_view_countdown);
+        textViewLevel = findViewById(R.id.text_view_level);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
         rb2 = findViewById(R.id.radio_button2);
@@ -79,16 +81,32 @@ public class QuizActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        Intent intent= getIntent();
+        String level= intent.getStringExtra(StartingScreenActivity.EXTRA_DIFFICULTY);
+        int positionToShowToSpinner = intent.getIntExtra(StartingScreenActivity.POSITION,0);
+        textViewLevel.setText("Level: "+level);
+
         if (savedInstanceState == null) {
-
-            questionList = dbHelper.getAllQuestion();
-            questionCountTotal = questionList.size();
+            if (positionToShowToSpinner == 1){
+                questionCountTotal = 30;
+            }else if (positionToShowToSpinner == 2){
+                questionCountTotal = 50;
+        }else{
+                questionCountTotal = 10;
+            }
+            questionList = dbHelper.getAllQuestion(questionCountTotal);
+            //questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
-
             showNextQuestion();
         }else {
             questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
-            questionCountTotal = questionList.size();
+//            if (level == "EASY"){
+//                questionCountTotal = 10;
+//            }else if (level == "MEDIUM"){
+//                questionCountTotal = 30;
+//            }else {
+//                questionCountTotal = 50;
+//            }
             questionCounter= savedInstanceState.getInt(KEY_QUESTION_COUNT);
             currentQuestion=questionList.get(questionCounter -1 );
             score= savedInstanceState.getInt(KEY_SCORE);

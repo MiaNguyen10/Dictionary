@@ -125,10 +125,10 @@ public class DbHelper extends SQLiteOpenHelper {
         }
     }
 
-    public ArrayList<Question> getAllQuestion(){
-        ArrayList<Question> questionList = new ArrayList<>();
+    public ArrayList<Question> getAllQuestion(int number){
+        ArrayList<Question> questionList = new ArrayList<Question>(number);
         myDataBase= this.getReadableDatabase();
-        Cursor c= myDataBase.rawQuery("SELECT * FROM practice ",null);
+        Cursor c= myDataBase.rawQuery("SELECT * FROM practice",null);
 
         if (c.moveToFirst()){
             do {

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:text="My Awesome Quiz"
         android:textColor="@color/black"
         android:textSize="35sp" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/button_start_quiz"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="20dp"
         android:text="Highscore : 0"
         android:textSize="20sp" />
 
@@ -39,11 +39,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_start_quiz"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="1in"
+        android:layout_marginTop="18dp"
         android:text="Select your level:"
-        android:textSize="16dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="16dp" />
 
     <Spinner
         android:id="@+id/spiner_level"
@@ -54,6 +54,6 @@
         android:layout_alignLeft="@id/button_start_quiz"
         android:layout_marginStart="79dp"
         android:layout_marginLeft="79dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="18dp" />
 
 </RelativeLayout>
